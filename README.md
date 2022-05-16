@@ -1,7 +1,14 @@
 # sns-demo-app-front
 
-ReactProjectを親フォルダなしで作成
-`create-react-app . --template typescript`
+* ReactProjectを親フォルダなしで作成
+```create-react-app . --template typescript```
+
+* material-ui / アイコンの追加
+```
+npm install @mui/icons-material 
+npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @mui/material @emotion/react @emotion/styled
+```
 
 
 # Getting Started with Create React App
