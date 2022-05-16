@@ -1,7 +1,8 @@
 import React from "react";
+import Home from "./pages/home/Home";
 
-function App() {
-  return <div className="App"></div>;
-}
+const App: React.FC = () => {
+  return <Home />;
+};
 
 export default App;
