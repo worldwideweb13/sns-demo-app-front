@@ -10,6 +10,11 @@ npm install @mui/material @mui/styled-engine-sc styled-components
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
+* styled-component 
+```
+npm i --save-dev @types/styled-components 
+npm install --save styled-components
+```
 
 # Getting Started with Create React App
 
