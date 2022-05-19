@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   Home,
   Search,
@@ -9,7 +9,9 @@ import {
   Person,
   Settings,
 } from "@mui/icons-material";
-import FirendImg from "../../assets/person/2.jpeg";
+import FirendImg_1 from "../../assets/person/2.jpeg";
+import FirendImg_2 from "../../assets/person/3.jpeg";
+import FirendImg_3 from "../../assets/person/4.jpeg";
 
 const Sidebar: React.FC = () => {
   return (
@@ -17,39 +19,47 @@ const Sidebar: React.FC = () => {
       <SidebarWrapper>
         <SidebarList>
           <SidebarListItem>
-            <Home />
+            <HomeIcon />
             <SidebarListItemText>ホーム</SidebarListItemText>
           </SidebarListItem>
           <SidebarListItem>
-            <Search />
+            <SearchIcon />
             <SidebarListItemText>検索</SidebarListItemText>
           </SidebarListItem>
           <SidebarListItem>
-            <Notifications />
+            <NotificationsIcon />
             <SidebarListItemText>通知</SidebarListItemText>
           </SidebarListItem>
           <SidebarListItem>
-            <MessageRounded />
+            <MessageRoundedIcon />
             <SidebarListItemText>メッセージ</SidebarListItemText>
           </SidebarListItem>
           <SidebarListItem>
-            <Bookmark />
+            <BookmarkIcon />
             <SidebarListItemText>ブックマーク</SidebarListItemText>
           </SidebarListItem>
           <SidebarListItem>
-            <Person />
+            <PersonIcon />
             <SidebarListItemText>プロフィール</SidebarListItemText>
           </SidebarListItem>
           <SidebarListItem>
-            <Settings />
+            <SettingsIcon />
             <SidebarListItemText>設定</SidebarListItemText>
           </SidebarListItem>
         </SidebarList>
         <SidebarHr />
         <SidebarFriendList>
           <SidebarFriend>
-            <SidebarFriendImg src={FirendImg} />
-            <SidebarFriendName>Shin Code</SidebarFriendName>
+            <SidebarFriendImg src={FirendImg_1} />
+            <SidebarFriendName>テスト太郎</SidebarFriendName>
+          </SidebarFriend>
+          <SidebarFriend>
+            <SidebarFriendImg src={FirendImg_2} />
+            <SidebarFriendName>テスト二郎</SidebarFriendName>
+          </SidebarFriend>
+          <SidebarFriend>
+            <SidebarFriendImg src={FirendImg_3} />
+            <SidebarFriendName>テスト三郎</SidebarFriendName>
           </SidebarFriend>
         </SidebarFriendList>
       </SidebarWrapper>
@@ -85,14 +95,58 @@ const SidebarListItem = styled.li({
     transform: "translateY(5px)",
   },
 });
-const SidebarIcon = styled(Home)({});
-const SidebarIcons = styled.svg({});
-const SidebarListItemText = styled.span({});
-const SidebarHr = styled.hr({});
-const SidebarFriendList = styled.ul({});
-const SidebarFriend = styled.li({});
+
+// パーツの共通化
+const SidebarIcons = css({
+  fontSize: "35px !important",
+  marginRight: "10px",
+});
+
+const HomeIcon = styled(Home)({
+  [`${SidebarIcons}`]: {},
+});
+const SearchIcon = styled(Search)({
+  [`${SidebarIcons}`]: {},
+});
+const NotificationsIcon = styled(Notifications)({
+  [`${SidebarIcons}`]: {},
+});
+const MessageRoundedIcon = styled(MessageRounded)({
+  [`${SidebarIcons}`]: {},
+});
+const BookmarkIcon = styled(Bookmark)({
+  [`${SidebarIcons}`]: {},
+});
+const PersonIcon = styled(Person)({
+  [`${SidebarIcons}`]: {},
+});
+const SettingsIcon = styled(Settings)({
+  [`${SidebarIcons}`]: {},
+});
+
+const SidebarListItemText = styled.span({
+  fontSize: "20px",
+  paddingTop: "3px",
+});
+
+const SidebarHr = styled.hr({
+  margin: "20px 0",
+});
+const SidebarFriendList = styled.ul({
+  padding: 0,
+  margin: 0,
+  listStyle: "none",
+});
+const SidebarFriend = styled.li({
+  display: "flex",
+  alignItems: "center",
+  marginBottom: "15px",
+});
 const SidebarFriendImg = styled.img({
   width: "32px",
   height: "32px",
+  objectFit: "cover",
+  borderRadius: "50%",
+  marginRight: "10px",
 });
 const SidebarFriendName = styled.span({});
