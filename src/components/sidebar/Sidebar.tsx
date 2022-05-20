@@ -12,6 +12,7 @@ import {
 import FirendImg_1 from "../../assets/person/2.jpeg";
 import FirendImg_2 from "../../assets/person/3.jpeg";
 import FirendImg_3 from "../../assets/person/4.jpeg";
+import { BaseProfImg } from "../style/mixin";
 
 const Sidebar: React.FC = () => {
   return (
@@ -143,10 +144,7 @@ const SidebarFriend = styled.li({
   marginBottom: "15px",
 });
 const SidebarFriendImg = styled.img({
-  width: "32px",
-  height: "32px",
-  objectFit: "cover",
-  borderRadius: "50%",
+  [`${BaseProfImg}`]: {},
   marginRight: "10px",
 });
 const SidebarFriendName = styled.span({});

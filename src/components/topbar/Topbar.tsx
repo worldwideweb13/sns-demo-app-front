@@ -2,6 +2,7 @@ import { Chat, Notifications, Search } from "@mui/icons-material";
 import React from "react";
 import profileImg from "../../assets/person/1.jpeg";
 import styled from "styled-components";
+import { BaseProfImg } from "../style/mixin";
 
 const Home: React.FC = () => {
   return (
@@ -120,9 +121,6 @@ const TopbarIconBadge = styled.span({
 });
 
 const TopbarImg = styled.img({
-  width: "32px",
-  height: "32px",
-  borderRadius: "50%",
+  [`${BaseProfImg}`]: {},
   cursor: "pointer",
-  objectFit: "cover",
 });

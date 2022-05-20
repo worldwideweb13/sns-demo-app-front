@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import profileImg from "../../assets/person/1.jpeg";
 import { Image, Gif, Face, Analytics } from "@mui/icons-material";
-import { borderRadius } from "@mui/system";
+import { BaseProfImg } from "../style/mixin";
 
 function Share() {
   return (
@@ -55,11 +55,10 @@ const ShareTop = styled.div({
   alignItems: "center",
 });
 const ShareProfileImg = styled.img({
-  width: "50px",
-  height: "50px",
-  borderRadius: "50%",
-  objectFit: "cover",
+  [`${BaseProfImg}`]: {},
   marginRight: "10px",
+  width: "50px !important",
+  height: "50px !important",
 });
 const ShareInput = styled.input({
   border: "none",
