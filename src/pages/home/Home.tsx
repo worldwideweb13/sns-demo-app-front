@@ -11,8 +11,8 @@ const Home: React.FC = () => {
       <Topbar />
       <HomeContainer>
         <Sidebar />
-        {/* <TimeLine />
-        <Rightbar /> */}
+        <TimeLine />
+        <Rightbar />
       </HomeContainer>
     </>
   );

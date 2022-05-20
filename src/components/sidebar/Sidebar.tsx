@@ -87,7 +87,7 @@ const SidebarListItem = styled.li({
   marginBottom: "10px",
   padding: "4px 6px",
   cursor: "pointer",
-  boxShadow: "0px 0px 27px -5px #777777",
+  boxShadow: "0px 0px 15px -10px #777777",
   borderRadius: "10px",
   transition: "all 0.3s",
   "&:hover": {
