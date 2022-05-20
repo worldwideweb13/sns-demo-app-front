@@ -47,7 +47,7 @@ const TopbarContainer = styled.div({
 
 const TopbarLeft = styled.div({
   /* flex...12/指定数 にレイアウト  */
-  flex: 3,
+  flex: "2.5",
 });
 
 const Logo = styled.span({
