@@ -9,6 +9,8 @@ function TimeLine() {
       <TimelineWrapper>
         <Share />
         <Post />
+        <Post />
+        <Post />
       </TimelineWrapper>
     </TimelineComponent>
   );
