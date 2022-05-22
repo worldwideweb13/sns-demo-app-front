@@ -1,47 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-import EventImgSample_1 from "../../assets/star.png";
-import EventImgSample_2 from "../../assets/event.jpeg";
-import ProfileImgSmaple_1 from "../../assets/person/1.jpeg";
-import ProfileImgSmaple_2 from "../../assets/person/2.jpeg";
-import PromotionImg_1 from "../../assets/promotion/promotion1.jpeg";
-import PromotionImg_2 from "../../assets/promotion/promotion2.jpeg";
-import PromotionImg_3 from "../../assets/promotion/promotion3.jpeg";
 
 const Rightbar: React.FC = () => {
   return (
     <RightbarComponent>
       <RightbarWrapper>
         <EventContainer>
-          <StarImg src={EventImgSample_1} />
+          <StarImg src="assets/star.png" />
           <EventText>
             <b>フォロワー限定</b>イベント開催
           </EventText>
         </EventContainer>
-        <EventImg src={EventImgSample_2} />
+        <EventImg src="assets/event.jpeg" />
         <RightbarTitle>オンラインの友達</RightbarTitle>
         <RightbarFriendList>
           <RightbarFriend>
             <RightbarProfileImgContainer>
-              <RightbarProfileImg src={ProfileImgSmaple_1} />
+              <RightbarProfileImg src="assets/person/1.jpeg" />
               <RightbarOnline></RightbarOnline>
             </RightbarProfileImgContainer>
             <RightbarUsername>Shin Code</RightbarUsername>
           </RightbarFriend>
           <RightbarFriend>
             <RightbarProfileImgContainer>
-              <RightbarProfileImg src={ProfileImgSmaple_2} />
+              <RightbarProfileImg src="assets/person/2.jpeg" />
               <RightbarOnline></RightbarOnline>
             </RightbarProfileImgContainer>
             <RightbarUsername>Tanaka</RightbarUsername>
           </RightbarFriend>
         </RightbarFriendList>
         <PromotionTitle>プロモーション広告</PromotionTitle>
-        <RightbarPromotionImg src={PromotionImg_1} />
+        <RightbarPromotionImg src="assets/promotion/promotion1.jpeg" />
         <PromotionName>ショッピング</PromotionName>
-        <RightbarPromotionImg src={PromotionImg_2} />
+        <RightbarPromotionImg src="assets/promotion/promotion2.jpeg" />
         <PromotionName>カーショップ</PromotionName>
-        <RightbarPromotionImg src={PromotionImg_3} />
+        <RightbarPromotionImg src="assets/promotion/promotion3.jpeg" />
         <PromotionName>ShinCode株式会社</PromotionName>
       </RightbarWrapper>
     </RightbarComponent>

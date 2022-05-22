@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import profileImg from "../../assets/person/1.jpeg";
 import { Image, Gif, Face, Analytics } from "@mui/icons-material";
 import { BaseProfImg } from "../style/mixin";
 
@@ -9,7 +8,7 @@ function Share() {
     <ShareComponent>
       <ShareWrapper>
         <ShareTop>
-          <ShareProfileImg src={profileImg} />
+          <ShareProfileImg src="assets/person/1.jpeg" />
           <ShareInput type="text" placeholder="今何してる？" />
         </ShareTop>
         <ShareHr />

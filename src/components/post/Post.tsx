@@ -1,26 +1,31 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import ProfileImg from "../../assets/person/1.jpeg";
-import LikeImgSample from "../../assets/heart.png";
 import { MoreVert } from "@mui/icons-material";
 import { BaseProfImg } from "../style/mixin";
-import { IPost } from "../../dummyData";
-import { Users } from "../../dummyData";
+import { IPost, Users } from "../../dummyData";
 
 interface PostProps {
   post: IPost;
 }
 
 const Post: React.FC<PostProps> = (props) => {
-  const user = Users.filter((user) => user.id === 1);
-  console.log(user);
+  // const user = Users.filter((user) => user.id === 1);
+  // const name = user[0].username;
+  // console.log(user[0]["username"]);
   return (
     <PostComponent>
       <PostWrapper>
         <PostTop>
           <PostTopLeft>
-            <PostProfileImg src={ProfileImg} />
-            <PostUsername>Shin Code</PostUsername>
+            <PostProfileImg
+              src={
+                Users.filter((user) => user.id === props.post.id)[0]
+                  .profilePicture
+              }
+            />
+            <PostUsername>
+              {Users.filter((user) => user.id === props.post.id)[0].username}
+            </PostUsername>
             <PostDate>{props.post.date}</PostDate>
           </PostTopLeft>
           <PostTopRight>
@@ -33,7 +38,7 @@ const Post: React.FC<PostProps> = (props) => {
         </PostCenter>
         <PostBottom>
           <PostBottomLeft>
-            <LikeIcon src={LikeImgSample} />
+            <LikeIcon src="assets/heart.png" />
             <PostLikeCounter>
               {props.post.like as ReactNode}人がいいねを押しました！
             </PostLikeCounter>

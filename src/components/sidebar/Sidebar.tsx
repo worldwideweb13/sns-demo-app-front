@@ -9,9 +9,6 @@ import {
   Person,
   Settings,
 } from "@mui/icons-material";
-import FirendImg_1 from "../../assets/person/2.jpeg";
-import FirendImg_2 from "../../assets/person/3.jpeg";
-import FirendImg_3 from "../../assets/person/4.jpeg";
 import { BaseProfImg } from "../style/mixin";
 
 const Sidebar: React.FC = () => {
@@ -51,15 +48,15 @@ const Sidebar: React.FC = () => {
         <SidebarHr />
         <SidebarFriendList>
           <SidebarFriend>
-            <SidebarFriendImg src={FirendImg_1} />
+            <SidebarFriendImg src="assets/person/2.jpeg" />
             <SidebarFriendName>テスト太郎</SidebarFriendName>
           </SidebarFriend>
           <SidebarFriend>
-            <SidebarFriendImg src={FirendImg_2} />
+            <SidebarFriendImg src="assets/person/3.jpeg" />
             <SidebarFriendName>テスト二郎</SidebarFriendName>
           </SidebarFriend>
           <SidebarFriend>
-            <SidebarFriendImg src={FirendImg_3} />
+            <SidebarFriendImg src="assets/person/4.jpeg" />
             <SidebarFriendName>テスト三郎</SidebarFriendName>
           </SidebarFriend>
         </SidebarFriendList>
