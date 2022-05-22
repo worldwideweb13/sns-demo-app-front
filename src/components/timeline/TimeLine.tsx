@@ -2,19 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import Share from "../share/Share";
 import Post from "../post/Post";
+import { Posts } from "../../dummyData";
 
-function TimeLine() {
+const TimeLine: React.FC = () => {
   return (
     <TimelineComponent>
       <TimelineWrapper>
         <Share />
-        <Post />
-        <Post />
-        <Post />
+        {Posts.map((post) => (
+          <Post post={post} key={post.id as React.Key} />
+        ))}
       </TimelineWrapper>
     </TimelineComponent>
   );
-}
+};
 
 export default TimeLine;
 
