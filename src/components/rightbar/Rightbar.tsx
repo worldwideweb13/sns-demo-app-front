@@ -1,5 +1,6 @@
-import React from "react";
 import styled from "styled-components";
+import { Users } from "../../dummyData";
+import Online from "../online/Online";
 
 const Rightbar: React.FC = () => {
   return (
@@ -14,20 +15,9 @@ const Rightbar: React.FC = () => {
         <EventImg src="assets/event.jpeg" />
         <RightbarTitle>オンラインの友達</RightbarTitle>
         <RightbarFriendList>
-          <RightbarFriend>
-            <RightbarProfileImgContainer>
-              <RightbarProfileImg src="assets/person/1.jpeg" />
-              <RightbarOnline></RightbarOnline>
-            </RightbarProfileImgContainer>
-            <RightbarUsername>Shin Code</RightbarUsername>
-          </RightbarFriend>
-          <RightbarFriend>
-            <RightbarProfileImgContainer>
-              <RightbarProfileImg src="assets/person/2.jpeg" />
-              <RightbarOnline></RightbarOnline>
-            </RightbarProfileImgContainer>
-            <RightbarUsername>Tanaka</RightbarUsername>
-          </RightbarFriend>
+          {Users.map((user) => (
+            <Online user={user} key={user.id as React.Key} />
+          ))}
         </RightbarFriendList>
         <PromotionTitle>プロモーション広告</PromotionTitle>
         <RightbarPromotionImg src="assets/promotion/promotion1.jpeg" />
@@ -75,34 +65,6 @@ const RightbarFriendList = styled.ul({
   padding: 0,
   margin: 0,
   listStyle: "none",
-});
-const RightbarFriend = styled.li({
-  display: "flex",
-  alignItems: "center",
-  marginBottom: "15px",
-});
-const RightbarProfileImgContainer = styled.div({
-  marginRight: "10px",
-  position: "relative",
-});
-const RightbarProfileImg = styled.img({
-  width: "40px",
-  height: "40px",
-  borderRadius: "50%",
-  objectFit: "cover",
-});
-const RightbarUsername = styled.span({
-  fontWeight: 550,
-});
-const RightbarOnline = styled.span({
-  backgroundColor: "purple",
-  position: "absolute",
-  width: "12px",
-  height: "12px",
-  borderRadius: "50%",
-  top: "-2px",
-  left: 0,
-  border: "2px solid white",
 });
 
 const PromotionTitle = styled.p({

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled, { css } from "styled-components";
 import {
   Home,
@@ -9,7 +9,8 @@ import {
   Person,
   Settings,
 } from "@mui/icons-material";
-import { BaseProfImg } from "../style/mixin";
+import { CloseFriend } from "../closeFriend/CloseFriend";
+import { Users } from "../../dummyData";
 
 const Sidebar: React.FC = () => {
   return (
@@ -47,18 +48,9 @@ const Sidebar: React.FC = () => {
         </SidebarList>
         <SidebarHr />
         <SidebarFriendList>
-          <SidebarFriend>
-            <SidebarFriendImg src="assets/person/2.jpeg" />
-            <SidebarFriendName>テスト太郎</SidebarFriendName>
-          </SidebarFriend>
-          <SidebarFriend>
-            <SidebarFriendImg src="assets/person/3.jpeg" />
-            <SidebarFriendName>テスト二郎</SidebarFriendName>
-          </SidebarFriend>
-          <SidebarFriend>
-            <SidebarFriendImg src="assets/person/4.jpeg" />
-            <SidebarFriendName>テスト三郎</SidebarFriendName>
-          </SidebarFriend>
+          {Users.map((user) => (
+            <CloseFriend user={user} key={user.id as React.Key} />
+          ))}
         </SidebarFriendList>
       </SidebarWrapper>
     </SidebarComponent>
@@ -135,13 +127,3 @@ const SidebarFriendList = styled.ul({
   margin: 0,
   listStyle: "none",
 });
-const SidebarFriend = styled.li({
-  display: "flex",
-  alignItems: "center",
-  marginBottom: "15px",
-});
-const SidebarFriendImg = styled.img({
-  [`${BaseProfImg}`]: {},
-  marginRight: "10px",
-});
-const SidebarFriendName = styled.span({});
