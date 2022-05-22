@@ -1,6 +1,5 @@
 import { Chat, Notifications, Search } from "@mui/icons-material";
 import React from "react";
-import profileImg from "../../assets/person/1.jpeg";
 import styled from "styled-components";
 import { BaseProfImg } from "../style/mixin";
 
@@ -26,7 +25,7 @@ const Home: React.FC = () => {
             <Notifications />
             <TopbarIconBadge>2</TopbarIconBadge>
           </TopbarIconItem>
-          <TopbarImg src={profileImg} alt="" />
+          <TopbarImg src="assets/person/1.jpeg" alt="" />
         </TopbarItemIcons>
       </TopbarRight>
     </TopbarContainer>
