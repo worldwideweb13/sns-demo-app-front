@@ -35,7 +35,44 @@ const Rightbar: React.FC<ProfileProps> = (props) => {
   };
 
   const ProfileRightbar = () => {
-    return <>profileのrightbarです。</>;
+    return (
+      <>
+        <RightbarProfileTitle>ユーザー情報</RightbarProfileTitle>
+        <RightbarProfileInfo>
+          <RightbarProfileInfoItem>
+            <RightbarProfileInfoKey>出身: </RightbarProfileInfoKey>
+            <RightbarProfileInfoKey>福岡: </RightbarProfileInfoKey>
+          </RightbarProfileInfoItem>
+          <RightbarProfileTitle>あなたの友達</RightbarProfileTitle>
+          <RightbarProfileFollowings>
+            <RightbarProfileFollowing>
+              <RightbarProfileFollowingImg src="assets/person/1.jpeg" />
+              <RightbarProfileFollowingName>
+                Shin Code
+              </RightbarProfileFollowingName>
+            </RightbarProfileFollowing>
+            <RightbarProfileFollowing>
+              <RightbarProfileFollowingImg src="assets/person/2.jpeg" />
+              <RightbarProfileFollowingName>
+                山田 太郎
+              </RightbarProfileFollowingName>
+            </RightbarProfileFollowing>
+            <RightbarProfileFollowing>
+              <RightbarProfileFollowingImg src="assets/person/3.jpeg" />
+              <RightbarProfileFollowingName>
+                山田 二郎
+              </RightbarProfileFollowingName>
+            </RightbarProfileFollowing>
+            <RightbarProfileFollowing>
+              <RightbarProfileFollowingImg src="assets/person/4.jpeg" />
+              <RightbarProfileFollowingName>
+                山田 三郎
+              </RightbarProfileFollowingName>
+            </RightbarProfileFollowing>
+          </RightbarProfileFollowings>
+        </RightbarProfileInfo>
+      </>
+    );
   };
 
   return (
@@ -48,6 +85,10 @@ const Rightbar: React.FC<ProfileProps> = (props) => {
 };
 
 export default Rightbar;
+
+/*
+ 共通パーツのCSSコンポーネント
+*/
 
 const RightbarComponent = styled.div({
   flex: "3.5",
@@ -98,3 +139,43 @@ const PromotionName = styled.p({
   color: "#434343",
   marginTop: "-20px",
 });
+
+/*
+ プロフィールページのCSSコンポーネント
+*/
+
+const RightbarProfileTitle = styled.h4({
+  fontSize: "18px",
+  fontWeight: 550,
+  marginBottom: "10px",
+});
+const RightbarProfileInfo = styled.div({
+  marginBottom: "30px",
+});
+const RightbarProfileInfoKey = styled.span({
+  fontWeight: 500,
+  marginRight: "5px",
+  color: "#555",
+});
+const RightbarProfileInfoItem = styled.div({
+  marginBottom: "10px",
+});
+
+const RightbarProfileFollowings = styled.div({
+  display: "flex",
+  flexWrap: "wrap", //画面サイズに合わせて要素が折り畳むようになる
+  justifyContent: "space-between",
+});
+const RightbarProfileFollowing = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  marginBottom: "20px",
+  cursor: "pointer",
+});
+const RightbarProfileFollowingImg = styled.img({
+  width: "100px",
+  height: "100px",
+  borderRadius: "50%",
+  objectFit: "cover",
+});
+const RightbarProfileFollowingName = styled.span({});

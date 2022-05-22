@@ -19,7 +19,7 @@ const Profile: React.FC = () => {
             </ProfileCover>
             <ProfileInfo>
               <ProfileInfoName>Shin Code</ProfileInfoName>
-              <ProfileInfoDesc>Udemy講師をしています</ProfileInfoDesc>
+              <ProfileInfoDesc>MERN開発を勉強中！</ProfileInfoDesc>
             </ProfileInfo>
           </ProfileRightTop>
           <ProfileRightBottom>
