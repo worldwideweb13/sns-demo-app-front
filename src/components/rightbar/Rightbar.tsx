@@ -2,10 +2,14 @@ import styled from "styled-components";
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
 
-const Rightbar: React.FC = () => {
-  return (
-    <RightbarComponent>
-      <RightbarWrapper>
+interface ProfileProps {
+  profile?: "profile";
+}
+
+const Rightbar: React.FC<ProfileProps> = (props) => {
+  const HomeRightbar = () => {
+    return (
+      <>
         <EventContainer>
           <StarImg src="assets/star.png" />
           <EventText>
@@ -26,6 +30,18 @@ const Rightbar: React.FC = () => {
         <PromotionName>カーショップ</PromotionName>
         <RightbarPromotionImg src="assets/promotion/promotion3.jpeg" />
         <PromotionName>ShinCode株式会社</PromotionName>
+      </>
+    );
+  };
+
+  const ProfileRightbar = () => {
+    return <>profileのrightbarです。</>;
+  };
+
+  return (
+    <RightbarComponent>
+      <RightbarWrapper>
+        {props.profile === "profile" ? <ProfileRightbar /> : <HomeRightbar />}
       </RightbarWrapper>
     </RightbarComponent>
   );
