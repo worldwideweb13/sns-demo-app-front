@@ -24,7 +24,7 @@ const Profile: React.FC = () => {
           </ProfileRightTop>
           <ProfileRightBottom>
             <TimeLine />
-            <Rightbar />
+            <Rightbar profile="profile" />
           </ProfileRightBottom>
         </ProfileRight>
       </ProfileContaienr>
