@@ -1,12 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import ProfileImg from "../../assets/person/1.jpeg";
-import PostImgSample from "../../assets/post/1.jpeg";
 import LikeImgSample from "../../assets/heart.png";
 import { MoreVert } from "@mui/icons-material";
 import { BaseProfImg } from "../style/mixin";
+import { IPost } from "../../dummyData";
+import { Users } from "../../dummyData";
 
-function Post() {
+interface PostProps {
+  post: IPost;
+}
+
+const Post: React.FC<PostProps> = (props) => {
+  const user = Users.filter((user) => user.id === 1);
+  console.log(user);
   return (
     <PostComponent>
       <PostWrapper>
@@ -14,29 +21,33 @@ function Post() {
           <PostTopLeft>
             <PostProfileImg src={ProfileImg} />
             <PostUsername>Shin Code</PostUsername>
-            <PostDate>5分前</PostDate>
+            <PostDate>{props.post.date}</PostDate>
           </PostTopLeft>
           <PostTopRight>
             <PostMenu />
           </PostTopRight>
         </PostTop>
         <PostCenter>
-          <PostText>SNSを自作中です</PostText>
-          <PostImg src={PostImgSample} />
+          <PostText>{props.post.desc}</PostText>
+          <PostImg src={props.post.photo} />
         </PostCenter>
         <PostBottom>
           <PostBottomLeft>
             <LikeIcon src={LikeImgSample} />
-            <PostLikeCounter>５人がいいねを押しました</PostLikeCounter>
+            <PostLikeCounter>
+              {props.post.like as ReactNode}人がいいねを押しました！
+            </PostLikeCounter>
           </PostBottomLeft>
           <PostBottomRight>
-            <PostCommentText>4:コメント</PostCommentText>
+            <PostCommentText>
+              {props.post.comment as ReactNode}:コメント
+            </PostCommentText>
           </PostBottomRight>
         </PostBottom>
       </PostWrapper>
     </PostComponent>
   );
-}
+};
 
 export default Post;
 
@@ -99,6 +110,7 @@ const LikeIcon = styled.img({
   cursor: "pointer",
 });
 const PostLikeCounter = styled.span({
+  text: "aaa",
   fontSize: "15px",
 });
 const PostBottomRight = styled.div({});
