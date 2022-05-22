@@ -10,7 +10,7 @@ export interface IPost {
   photo: string;
   date: String;
   userId: Number;
-  like: Number;
+  like: number;
   comment: Number;
 }
 

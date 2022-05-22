@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import styled from "styled-components";
 import { MoreVert } from "@mui/icons-material";
 import { BaseProfImg } from "../style/mixin";
@@ -9,9 +9,14 @@ interface PostProps {
 }
 
 const Post: React.FC<PostProps> = (props) => {
-  // const user = Users.filter((user) => user.id === 1);
-  // const name = user[0].username;
-  // console.log(user[0]["username"]);
+  const [like, setLike] = useState(props.post.like);
+  const [isLiked, setIsLiked] = useState(false);
+  const handleLike = () => {
+    // フラグが初期値(false)であればいいね+1, else -1
+    setLike(isLiked ? like - 1 : like + 1);
+    // フラグを反転させる
+    setIsLiked(!isLiked);
+  };
   return (
     <PostComponent>
       <PostWrapper>
@@ -38,10 +43,8 @@ const Post: React.FC<PostProps> = (props) => {
         </PostCenter>
         <PostBottom>
           <PostBottomLeft>
-            <LikeIcon src="assets/heart.png" />
-            <PostLikeCounter>
-              {props.post.like as ReactNode}人がいいねを押しました！
-            </PostLikeCounter>
+            <LikeIcon src="assets/heart.png" onClick={() => handleLike()} />
+            <PostLikeCounter>{like}人がいいねを押しました！</PostLikeCounter>
           </PostBottomLeft>
           <PostBottomRight>
             <PostCommentText>
