@@ -1,5 +1,7 @@
 # sns-demo-app-front
 
+SNSアプリのフロントエンドのソースです。
+
 * ReactProjectを親フォルダなしで作成
 ```create-react-app . --template typescript```
 
