@@ -1,8 +1,12 @@
 # sns-demo-app-front
 
+# 使用技術
+React,typeScript,Styled-component,
+
 SNSアプリのフロントエンドのソースです。
 以下の機能を実装しております。
 * ログイン認証機能
+
 
 * ReactProjectを親フォルダなしで作成
 ```create-react-app . --template typescript```
@@ -19,4 +23,3 @@ npm install @mui/material @emotion/react @emotion/styled
 npm i --save-dev @types/styled-components 
 npm install --save styled-components
 ```
-* 
